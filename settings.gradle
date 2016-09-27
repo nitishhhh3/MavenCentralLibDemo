@@ -1,0 +1,1 @@
+include ':app', ':maven-central-demo'

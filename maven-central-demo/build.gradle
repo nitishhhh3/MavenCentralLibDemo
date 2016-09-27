@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+ext {
+    bintrayRepo = 'mavencentral-sample'
+    bintrayName = 'maven-central-demo'
+
+    publishedGroupId = 'com.github.nitishhhh3.dmi.customlib'
+    libraryName = 'MavenCentralLibDemo'
+    artifact = 'maven-central-demo'
+
+    libraryDescription = 'Android custom library demo'
+
+    siteUrl = 'https://github.com/nitishhhh3/MavenCentralLibDemo'
+    gitUrl = 'https://github.com/nitishhhh3/MavenCentralLibDemo.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'nitishhhh3'
+    developerName = 'Nitish Srivastava'
+    developerEmail = 'nitishsrivastava90@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+    com = 23
+}
+android {
+    compileSdkVersion 23
+    buildToolsVersion "24.0.0"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+}
+
+apply from: 'https://rawgit.com/nitishhhh3/jcenter/master/installv1.gradle'
+apply from: 'https://rawgit.com/nitishhhh3/jcenter/master/bintrayv1.gradle'
